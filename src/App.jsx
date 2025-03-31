@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 
 const timelineData = [
@@ -71,6 +72,15 @@ export default function App() {
           </div>
         </div>
       )}
+=======
+import React from 'react';
+
+export default function App() {
+  return (
+    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
+      <h1>UK History Timeline</h1>
+      <p>This is a placeholder. Replace this with your timeline content.</p>
+>>>>>>> c7caf49e44173515c14513af5214251411f2429d
     </div>
   );
 }

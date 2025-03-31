@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-
 const timelineData = [
   {
     period: "兩次世界大戰時期 / World Wars Era",

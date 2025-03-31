@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 const timelineData = [
   {
     period: "兩次世界大戰時期 / World Wars Era",
@@ -35,9 +37,19 @@ export default function App() {
 
   return (
     <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>英國歷史時間軸 / UK History Timeline</h1>
+      <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+        英國歷史時間軸 / UK History Timeline
+      </h1>
+
       {timelineData.map((item, idx) => (
-        <div key={idx} onClick={() => setSelected(item)} style={{ cursor: 'pointer', marginBottom: '1rem', padding: '1rem', background: '#fff', borderRadius: '8px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
+        <div key={idx} onClick={() => setSelected(item)} style={{
+          cursor: 'pointer',
+          marginBottom: '1rem',
+          padding: '1rem',
+          background: '#fff',
+          borderRadius: '8px',
+          boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
+        }}>
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
             <img src={item.image} alt={item.monarch} width="60" height="60" style={{ borderRadius: '50%', objectFit: 'cover' }} />
             <div>
@@ -47,14 +59,19 @@ export default function App() {
           </div>
         </div>
       ))}
+
       {selected && (
         <div style={{ padding: '1rem', background: '#eef', borderRadius: '8px' }}>
           <h2>{selected.monarch}</h2>
           <img src={selected.image} alt={selected.monarch} width="100" style={{ borderRadius: '50%', marginBottom: '1rem' }} />
           <ul>
-            {selected.events.map((e, idx) => <li key={idx}>{e}</li>)}
+            {selected.events.map((e, idx) => (
+              <li key={idx}>{e}</li>
+            ))}
           </ul>
-          <p style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>世界背景 / World Context: {selected.worldContext}</p>
+          <p style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>
+            世界背景 / World Context: {selected.worldContext}
+          </p>
           <h4 style={{ marginTop: '1rem', fontWeight: '600' }}>其他國家統治者 / Other Rulers:</h4>
           <div>
             {selected.otherRulers.map((r, idx) => (
@@ -69,15 +86,6 @@ export default function App() {
           </div>
         </div>
       )}
-=======
-import React from 'react';
-
-export default function App() {
-  return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <h1>UK History Timeline</h1>
-      <p>This is a placeholder. Replace this with your timeline content.</p>
->>>>>>> c7caf49e44173515c14513af5214251411f2429d
     </div>
   );
 }
